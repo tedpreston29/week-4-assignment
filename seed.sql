@@ -1,5 +1,3 @@
--- PUT COPY OF WHAT I DID IN THE SQL EDIOTR ON SUPABASE IN HERE --
-
 CREATE TABLE filmRating (
   id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   title TEXT,
@@ -18,4 +16,6 @@ INSERT INTO filmRating (title, rating, comment) VALUES
 ('Troll 2', 1, 'Absolutely terrible but so entertaining to watch with friends.'),
 ('Spider-Man: Into the Spider-Verse', 5, 'Visual feast and heartfelt story; animation at its best.'),
 ('Guardians of the Galaxy', 4, 'Fun, action-packed, and full of humor and music.');
+
+SELECT * FROM filmrating ORDER BY title ASC
 

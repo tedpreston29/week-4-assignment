@@ -16,9 +16,13 @@ app.get("/", (req, res) => {
   res.status(200).json(`I AM ROOT!`);
 });
 
-// app.get("/filmRating", async (req, res) => {
-//   const reviews = // Come back to here after table created
-// })
+app.get("/userRating", async (req, res) => {
+  const reviews = await dataBase.query(
+    `SELECT * FROM filmRating ORDER BY title ASC`
+  );
+
+  res.json(reviews.rows);
+});
 
 app.listen(9999, () => {
   console.log(`The server be runnin' on http://localhost:9999`);
