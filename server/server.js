@@ -24,6 +24,20 @@ app.get("/userRating", async (req, res) => {
   res.json(reviews.rows);
 });
 
+app.post("/userRating", async (req, res) => {
+  const body = req.body;
+  const titleFromUser = req.body.title;
+  const commentFromUser = req.body.comment;
+  const ratingFromUser = req.body.rating;
+
+  const data = await dataBase.query(
+    `INSERT INTO filmRating (title, rating, comment) VALUES($1, $2, $3)`,
+    [titleFromUser, ratingFromUser, commentFromUser]
+  );
+
+  res.json({ status: `Review submitted, Cheers!` });
+});
+
 app.listen(9999, () => {
   console.log(`The server be runnin' on http://localhost:9999`);
 });
