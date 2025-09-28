@@ -87,5 +87,10 @@ body {
   #filmRating {
     width: 90%;
     max-width: 430px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
   }
 }
