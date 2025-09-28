@@ -1,0 +1,91 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: monospace;
+  gap: 20px;
+  background: #112bab;
+  background: radial-gradient(
+    circle,
+    rgba(17, 43, 171, 1) 11%,
+    rgba(15, 15, 82, 1) 87%
+  );
+}
+
+#filmRating {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#filmRating button:last-child {
+  background-color: rgb(221, 87, 87);
+  border: none;
+  border-radius: 5px;
+}
+
+#filmRating button:last-child:hover {
+  background-color: rgb(114, 168, 250);
+}
+
+#app {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
+  justify-items: center;
+}
+
+.review-container {
+  background-color: rgb(208, 209, 231);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.review-container p {
+  margin: 5px;
+}
+
+.review-container p:first-child {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.review-container button {
+  background-color: rgb(114, 168, 250);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.review-container button:hover {
+  background-color: rgb(221, 87, 87);
+}
+
+@media (max-width: 432px) {
+  #app {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 5px;
+  }
+  #filmRating {
+    width: 90%;
+    max-width: 430px;
+  }
+}

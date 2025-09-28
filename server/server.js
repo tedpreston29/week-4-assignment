@@ -38,6 +38,12 @@ app.post("/userRating", async (req, res) => {
   res.json({ status: `Review submitted, Cheers!` });
 });
 
+app.delete("/userRating/:id", async (req, res) => {
+  const id = req.params.id;
+  await dataBase.query(`DELETE FROM filmRating WHERE id = $1`, [id]);
+  res.json({ status: `Review ${id} deleted` });
+});
+
 app.listen(9999, () => {
   console.log(`The server be runnin' on http://localhost:9999`);
 });

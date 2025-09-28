@@ -5,16 +5,16 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="/src/main.js" defer></script>
-    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="./src/style.css" />
     <title>client</title>
   </head>
   <body>
-    <div id="app"></div>
     <form id="filmRating">
       <input name="film" placeholder="Film Title" required />
       <input type="number" name="rating" placeholder="Rating" required />
-      <input name="comment" placeholder="Your Review" required />
-      <button type="submit">SUBMIT</button>
+      <textarea name="comment" placeholder="Your Review..." required></textarea>
+      <button type="submit" class="submitbtn">SUBMIT</button>
     </form>
+    <div id="app"></div>
   </body>
 </html>

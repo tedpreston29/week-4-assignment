@@ -10,6 +10,7 @@ const fetchReviews = async () => {
 function addReviews(reviewsArray) {
   reviewsArray.forEach((reviewObject) => {
     const div = document.createElement("div");
+    div.classList.add("review-container");
     console.log(reviewObject);
 
     const film = document.createElement("p");
@@ -20,8 +21,19 @@ function addReviews(reviewsArray) {
     comment.innerText = reviewObject.comment;
     rating.innerText = reviewObject.rating;
 
+    const deleteBtn = document.createElement("button");
+    deleteBtn.innerText = "Delete";
+
+    deleteBtn.addEventListener("click", async () => {
+      await fetch(`http://localhost:9999/userRating/${reviewObject.id}`, {
+        method: "DELETE",
+      });
+      fetchReviews();
+    });
+
     div.setAttribute("id", "review-container");
     div.append(film, comment, rating);
+    div.append(deleteBtn);
     reviewDisplay.append(div);
   });
 }
