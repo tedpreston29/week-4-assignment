@@ -1,8 +1,9 @@
 const reviewDisplay = document.getElementById("app");
 const userSubmission = document.getElementById("filmRating");
+const baseUrl = "https://week-4-assignment-73o0.onrender.com";
 
 const fetchReviews = async () => {
-  const response = await fetch(`http://localhost:9999/userRating`);
+  const response = await fetch(`${baseUrl}/userRating`);
   const reviews = await response.json();
   addReviews(reviews);
 };
@@ -25,7 +26,7 @@ function addReviews(reviewsArray) {
     deleteBtn.innerText = "Delete";
 
     deleteBtn.addEventListener("click", async () => {
-      await fetch(`http://localhost:9999/userRating/${reviewObject.id}`, {
+      await fetch(`${baseUrl}/userRating/${reviewObject.id}`, {
         method: "DELETE",
       });
       fetchReviews();
@@ -46,7 +47,7 @@ userSubmission.addEventListener("submit", async (event) => {
   const reviewSubmitted = Object.fromEntries(data);
   console.log(reviewSubmitted);
 
-  const response = await fetch(`http://localhost:9999/userRating`, {
+  const response = await fetch(`${baseUrl}/userRating`, {
     headers: {
       "content-Type": "application/json",
     },

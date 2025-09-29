@@ -44,6 +44,8 @@ app.delete("/userRating/:id", async (req, res) => {
   res.json({ status: `Review ${id} deleted` });
 });
 
-app.listen(9999, () => {
-  console.log(`The server be runnin' on http://localhost:9999`);
+const PORT = process.env.PORT || 9999;
+
+app.listen(PORT, () => {
+  console.log(`The server be runnin' on ${PORT}`);
 });
